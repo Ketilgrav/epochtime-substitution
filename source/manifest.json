@@ -1,31 +1,18 @@
 {
-	"name": "Awesome Extension",
-	"version": "0.0.0",
-	"description": "An awesome new browser extension",
-	"homepage_url": "https://github.com/awesome-templates/browser-extension-template",
+	"name": "Epochtime Substitution",
+	"version": "0.1",
+	"description": "Replaces epoch strings with datetime strings.",
+	"homepage_url": "https://github.com/Ketilgrav/epochtime-substitution",
 	"manifest_version": 2,
 	"minimum_chrome_version": "74",
-	"applications": {
-		"gecko": {
-			"id": "your-extension-name@your-domain.com",
-			"strict_min_version": "67.0"
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"./substitute.js"
+			]
 		}
-	},
-	"icons": {
-		"128": "icon.png"
-	},
-	"permissions": [
-		"storage"
-	],
-	"options_ui": {
-		"chrome_style": true,
-		"page": "options.html"
-	},
-	"background": {
-		"persistent": false,
-		"scripts": [
-			"browser-polyfill.min.js",
-			"background.js"
-		]
-	}
+	]
 }
