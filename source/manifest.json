@@ -1,10 +1,15 @@
 {
 	"name": "Epochtime Substitution",
-	"version": "0.1",
+	"version": "0.2",
 	"description": "Replaces epoch strings with datetime strings.",
 	"homepage_url": "https://github.com/Ketilgrav/epochtime-substitution",
 	"manifest_version": 2,
 	"minimum_chrome_version": "74",
+	"applications": {
+		"gecko": {
+			"id": "{3e99ce3d-6afd-4fc3-ac96-b72d72e3e291}"
+		}
+	},
 	"content_scripts": [
 		{
 			"matches": [
@@ -14,5 +19,30 @@
 				"./substitute.js"
 			]
 		}
-	]
+	],
+	"icons": {
+		"128": "icon.png"
+	},
+	"options_ui": {
+		"chrome_style": true,
+		"page": "options.html"
+	},
+	"browser_action": {
+		"browser_style": true,
+		"default_popup": "options.html",
+		"default_icon": {
+			"128": "icon.png"
+		}
+	},
+	"permissions": [
+		"storage",
+		"activeTab"
+	],
+	"background": {
+		"persistent": false,
+		"scripts": [
+			"browser-polyfill.min.js",
+			"background.js"
+		]
+	}
 }
