@@ -7,7 +7,9 @@ module.exports = {
 	devtool: 'sourcemap',
 	stats: 'errors-only',
 	entry: {
-		substitute: './source/substitute'
+		substitute: './source/substitute',
+		background: './source/background',
+		options: './source/options'
 	},
 	output: {
 		path: path.join(__dirname, 'distribution'),
